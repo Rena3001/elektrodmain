@@ -8,27 +8,23 @@ return new class extends Migration
 {
     /**
      * Run the migrations.
-     *
-     * @return void
      */
     public function up(): void
     {
-        Schema::create('language_lines', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->string('group')->index();
-            $table->string('key');
-            $table->string('text');
+        Schema::create('langs', function (Blueprint $table) {
+            $table->id();
+            $table->string('country');
+            $table->string('code', 3);
+            $table->string('image')->nullable();
             $table->timestamps();
         });
     }
 
     /**
      * Reverse the migrations.
-     *
-     * @return void
      */
     public function down(): void
     {
-        Schema::dropIfExists('language_lines');
+        Schema::dropIfExists('langs');
     }
 };

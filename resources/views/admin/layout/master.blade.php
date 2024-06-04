@@ -14,9 +14,9 @@
     <!--    Main Content-->
     <!-- ===============================================-->
     <main class="main" id="top">
-        <x-admin-header-component />
         @include('admin.layout.includes.sidebar')
-    
+        <x-admin-header-component />
+
         <nav class="navbar navbar-top navbar-slim fixed-top navbar-expand" id="topNavSlim" style="display:none;">
             <div class="collapse navbar-collapse justify-content-between">
                 <div class="navbar-logo">
@@ -7767,10 +7767,10 @@
             }
         </script>
         <div class="content">
-          
+
            @yield('content')
           <x-admin-footer-component />
-           
+
         </div>
         <div class="modal fade" id="searchBoxModal" tabindex="-1" aria-hidden="true"
             data-bs-backdrop="true" data-phoenix-modal="data-phoenix-modal"
