@@ -4,7 +4,6 @@
     <script src="{{asset('admin/assets/vendors/is/is.min.js')}}"></script>
     <script src="{{asset('admin/assets/vendors/fontawesome/all.min.js')}}"></script>
     <script src="{{asset('admin/assets/vendors/lodash/lodash.min.js')}}"></script>
-    <script src="../../v3/polyfill.min.js?features=window.scroll"></script>
     <script src="{{asset('admin/assets/vendors/list.js/list.min.js')}}"></script>
     <script src="{{asset('admin/assets/vendors/feather-icons/feather.min.js')}}"></script>
     <script src="{{asset('admin/assets/vendors/dayjs/dayjs.min.js')}}"></script>
