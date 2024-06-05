@@ -1,3 +1,7 @@
+@php
+$route = request()->route()->getName();
+$title = ucwords(str_replace(['admin.','.', '_'], ' ', $route));
+@endphp
 <!DOCTYPE html>
 <html data-navigation-type="default" data-navbar-horizontal-shape="default" lang="en-US" dir="ltr">
 
@@ -7767,7 +7771,8 @@
             }
         </script>
         <div class="content">
-
+            <h2 class="mb-2 lh-sm">
+                {{$title}}</h2>
            @yield('content')
           <x-admin-footer-component />
 

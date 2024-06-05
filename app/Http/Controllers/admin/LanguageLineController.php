@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\Admin\LanguageLineRequest;
 use App\Models\Lang;
 use Illuminate\Http\Request;
 use Spatie\TranslationLoader\LanguageLine;
@@ -35,7 +36,7 @@ class LanguageLineController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(LanguageLineRequest $request)
     {
         $validated = $request->validate([
             'group' => 'required|string|max:255',
@@ -49,7 +50,7 @@ class LanguageLineController extends Controller
             'text' => $validated['text'],
         ]);
 
-        return redirect()->route('admin.language_line.create')->with('success', 'Language Line added successfully.');
+        return redirect()->route('admin.language_line.index')->with('success', 'Language Line added successfully.');
     }
 
     /**
@@ -82,7 +83,7 @@ class LanguageLineController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, LanguageLine $languageLine)
+    public function update(LanguageLineRequest $request, LanguageLine $languageLine)
     {
         if (!empty($languageLine)) {
             $model = $languageLine;

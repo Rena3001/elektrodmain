@@ -2,7 +2,9 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\admin\AdminController;
+use App\Http\Controllers\Admin\LangController;
 use App\Http\Controllers\Admin\LanguageLineController;
+use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,7 +17,9 @@ use App\Http\Controllers\Admin\LanguageLineController;
 |
 */
 
-Route::prefix('control')->as('admin.')->group(function () {
-    Route::get('/', [AdminController::class,'index'])->name('dashboard');
+Route::group([ 'prefix' => LaravelLocalization::setLocale().'/control', 'as' => 'admin.'], function () {
+      Route::get('/', [AdminController::class,'index'])->name('dashboard');
     Route::resource('language_line', LanguageLineController::class);
+    Route::resource('langs', LangController::class);
 });
+

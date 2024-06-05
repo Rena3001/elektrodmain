@@ -1,0 +1,26 @@
+.lang{
+    min-width:3rem;
+
+}
+
+.form-group{
+    display: flex;
+    gap: 20px;
+}
+
+.table_of_langs
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+}
+.language-switch a{
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.language-switch a img{
+    width: 20px;
+}

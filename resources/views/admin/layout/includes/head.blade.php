@@ -35,6 +35,7 @@
 <link href="{{ asset('admin/assets/css/theme.min.css') }}" type="text/css" rel="stylesheet" id="style-default">
 <link href="{{ asset('admin/assets/css/user-rtl.min.css') }}" type="text/css" rel="stylesheet" id="user-style-rtl">
 <link href="{{ asset('admin/assets/css/user.min.css') }}" type="text/css" rel="stylesheet" id="user-style-default">
+<link href="{{ asset('admin/assets/css/custom.css') }}" type="text/css" rel="stylesheet" id="user-style-default">
 <script>
     document.addEventListener('DOMContentLoaded', function() {
         var phoenixIsRTL = window.config.config.phoenixIsRTL;

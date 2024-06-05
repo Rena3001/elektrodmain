@@ -2,8 +2,8 @@
 @section('content')
     <div class="card">
         <div class="card-header p-4 border-bottom bg-body">
-            <a class="btn btn-sm btn-phoenix-primary"
-                href="{{route('admin.language_line.create')}}" role="button" aria-controls="basic-example-code" >  Create</a>
+            <a class="btn btn-sm btn-phoenix-primary" href="{{ route('admin.langs.create') }}" role="button"
+                aria-controls="basic-example-code"> Create</a>
         </div>
         <div class="card-body">
             <div class="p-4 code-to-copy">
@@ -20,9 +20,9 @@
                             <thead>
                                 <tr>
                                     <th class="sort border-top border-translucent ps-3" data-sort="name">Id</th>
-                                    <th class="sort border-top" data-sort="email">Group</th>
-                                    <th class="sort border-top" data-sort="age">Key</th>
-                                    <th class="w-auto">Text</th>
+                                    <th class="sort border-top" data-sort="email">Code</th>
+                                    <th class="sort border-top" data-sort="age">Country</th>
+                                    <th class="w-auto">Image</th>
                                     <th class="sort text-end align-middle pe-0 border-top" scope="col">Actions</th>
                                 </tr>
                             </thead>
@@ -30,18 +30,14 @@
                                 @foreach ($models as $model)
                                     <tr>
                                         <td class="align-middle ps-3">{{ $model->id }}</td>
-                                        <td class="align-middle">{{ $model->group }}</td>
-                                        <td class="align-middle">{{ $model->key }}</td>
-                                        <td class="align-middle">
-                                            @php
-                                                $texts = $model->text;
-                                            @endphp
-                                            @if (is_array($texts))
-                                                @foreach ($texts as $lang => $text)
-                                                    <p><strong>{{ strtoupper($lang) }}:</strong> {{ $text }}</p>
-                                                @endforeach
-                                            @else
-                                                <p>{{ $model->text }}</p>
+                                        <td class="align-middle">{{ $model->code }}</td>
+                                        <td class="align-middle">{{ $model->country }}</td>
+                                        <td class="align-middle" style="width: 70px">
+                                            @if ($model->image)
+                                                <div class="image">
+                                                    <img src="{{ $model->image }}" alt="{{ $model->country . ' flag' }}"
+                                                        class="img-fluid">
+                                                </div>
                                             @endif
                                         </td>
                                         <td class="align-middle white-space-nowrap text-end pe-0">
@@ -54,14 +50,14 @@
                                                 </button>
                                                 <div class="dropdown-menu dropdown-menu-end py-2">
                                                     <a class="dropdown-item"
-                                                        href="{{ route('admin.language_line.show', $model->id) }}">View</a>
+                                                        href="{{ route('admin.langs.show', $model->id) }}">View</a>
                                                     <a class="dropdown-item"
-                                                        href="{{ route('admin.language_line.edit', $model->id) }}">Edit</a>
+                                                        href="{{ route('admin.langs.edit', $model->id) }}">Edit</a>
                                                     <div class="dropdown-divider"></div>
                                                     {{-- <a class="dropdown-item text-danger"
                                                         href="{{ route('admin.language_line.destroy', $model->id) }}"
                                                         onclick="return confirm('Are you sure?')">Remove</a> --}}
-                                                    <form action="{{ route('admin.language_line.destroy', $model->id) }}"
+                                                    <form action="{{ route('admin.langs.destroy', $model->id) }}"
                                                         onclick="return confirm('Are you sure?')" method="post">
                                                         @method('delete')
                                                         @csrf
