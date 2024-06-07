@@ -60,6 +60,16 @@
                                         </div>
                                     </a><!-- more inner pages-->
                                 </li>
+                                <li class="nav-item">
+                                    <a class="nav-link dropdown-indicator label-1 @if (Route::is('admin.valve_categories*')) active @endif"
+                                        href="{{ route('admin.valve_categories.index') }}">
+                                        <div class="d-flex align-items-center">
+                                            <span class="nav-link-icon me-0"><span data-feather="globe"></span>
+                                            </span>
+                                            <span class="nav-link-text ps-2">Valve Categories</span>
+                                        </div>
+                                    </a><!-- more inner pages-->
+                                </li>
 
                             </ul>
                         </div>

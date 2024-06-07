@@ -271,7 +271,7 @@
                             </ul>
                             <hr>
                             <div class="px-3"> <a class="btn btn-phoenix-secondary d-flex flex-center w-100"
-                                    href="#!"> <span class="me-2" data-feather="log-out">
+                                    href="{{ route('admin.logout') }}"> <span class="me-2" data-feather="log-out">
                                     </span>Sign out</a></div>
                             <div class="my-2 text-center fw-bold fs-10 text-body-quaternary"><a
                                     class="text-body-quaternary me-1" href="#!">Privacy
