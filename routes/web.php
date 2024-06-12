@@ -5,6 +5,7 @@ use App\Http\Controllers\admin\AdminController;
 use App\Http\Controllers\Admin\AuthController;
 use App\Http\Controllers\Admin\LangController;
 use App\Http\Controllers\Admin\LanguageLineController;
+use App\Http\Controllers\Admin\SliderController;
 use App\Http\Controllers\Admin\ValveCategoryController;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 
@@ -27,6 +28,7 @@ Route::get('/', [AdminController::class,'index'])->name('index');
     Route::resource('langs', LangController::class);
     Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
     Route::resource('valve_categories', ValveCategoryController::class);
+    Route::resource('sliders', SliderController::class);
 });
 
 Route::get(LaravelLocalization::setLocale().'/control', [AuthController::class, 'login'])->name('login');

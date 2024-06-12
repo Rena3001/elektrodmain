@@ -25,9 +25,9 @@
                     <hr class="navbar-vertical-line"><!-- parent pages-->
                     <!-- parent pages-->
                     <div class="nav-item-wrapper">
-                        <a class="nav-link dropdown-indicator label-1 @if (!Route::is('admin.language_line*', 'admin.langs*')) collapsed @else active @endif"
+                        <a class="nav-link dropdown-indicator label-1 @if (!Route::is('admin.language_line*', 'admin.langs*','admin.valve_categories*', 'admin.sliders*')) collapsed @else active @endif"
                             href="#nv-home " role="button" data-bs-toggle="collapse"
-                            aria-expanded="{{Route::is('admin.language_line*' , 'admin.langs*')?'true':'false'}}"
+                            aria-expanded="{{Route::is('admin.language_line*' , 'admin.langs*','admin.valve_categories*', 'admin.sliders*')?'true':'false'}}"
                             aria-controls="nv-home">
                             <div class="d-flex align-items-center">
                                 <div class="dropdown-indicator-icon"><span class="fas fa-caret-right"></span>
@@ -38,7 +38,7 @@
                             </div>
                         </a>
                         <div class="parent-wrapper label-1">
-                            <ul class="nav collapse parent @if (Route::is('admin.language_line*' , 'admin.langs*')) show @endif" data-bs-parent="#navbarVerticalCollapse"
+                            <ul class="nav collapse parent @if (Route::is('admin.language_line*' , 'admin.langs*', 'admin.valve_categories*', 'admin.sliders*')) show @endif" data-bs-parent="#navbarVerticalCollapse"
                                 id="nv-home">
                                 <li class="nav-item">
                                     <a class="nav-link dropdown-indicator label-1 @if (Route::is('admin.language_line*')) active @endif"
@@ -67,6 +67,16 @@
                                             <span class="nav-link-icon me-0"><span data-feather="globe"></span>
                                             </span>
                                             <span class="nav-link-text ps-2">Valve Categories</span>
+                                        </div>
+                                    </a><!-- more inner pages-->
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link dropdown-indicator label-1 @if (Route::is('admin.sliders*')) active @endif"
+                                        href="{{ route('admin.sliders.index') }}">
+                                        <div class="d-flex align-items-center">
+                                            <span class="nav-link-icon me-0"><span data-feather="globe"></span>
+                                            </span>
+                                            <span class="nav-link-text ps-2">Sliders</span>
                                         </div>
                                     </a><!-- more inner pages-->
                                 </li>

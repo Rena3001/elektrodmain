@@ -35,6 +35,14 @@ class DataService
         return $categories;
     }
 
+    public function getNowDateStr(){
+            list($microseconds, $seconds) = explode(' ', microtime());
+            $milliseconds = sprintf('%03d', $microseconds * 1000);
+            $datetime = date('Y_m_d_H_i_s', $seconds);
+
+            $post_data = $datetime. '_'. $milliseconds;
+            return $post_data;
+    }
 
     // public function getObjectProps($o, $fields, $parent = '') {
     //     if (strlen($parent)) {

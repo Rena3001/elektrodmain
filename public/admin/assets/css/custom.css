@@ -6,8 +6,12 @@
 .form-group{
     display: flex;
     gap: 20px;
+    align-items: center;
+    margin-bottom: 10px;
 }
-
+.form-group>label{
+    min-width: 60px;
+}
 .table_of_langs
 {
     display: flex;
