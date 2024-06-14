@@ -24,11 +24,11 @@ class DatabaseSeeder extends Seeder
         ]);
         if (empty(Lang::exists())) {
             Lang::factory()->create([
-                'country' => 'USA',
+                'language' => 'English',
                 'code' => 'en',
             ]);
             Lang::factory()->create([
-                'country' => 'Azərbaycan',
+                'language' => 'Azərbaycan',
                 'code' => 'az',
             ]);
         }

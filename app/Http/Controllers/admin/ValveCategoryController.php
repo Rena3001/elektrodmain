@@ -19,31 +19,22 @@ class ValveCategoryController extends Controller
         $this->dataService = $dataService;
     }
 
-    /**
-     * Display a listing of the resource.
-     */
     public function index()
     {
         $models = ValveCategory::all();
         return view('admin.valve_categories.index', compact('models'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
     public function create()
     {
         $langs = Lang::all();
         return view('admin.valve_categories.create', compact('langs'));
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
     public function store(ValveCategoryRequest $request)
     {
-        // Retrieve all the input data
-        $data = $request->only('title' );
+
+        $data = $request->only('title');
         $data['slug'] = $this->dataService->sluggableArray($data, 'title');
         $created = ValveCategory::create($data);
 
@@ -68,6 +59,7 @@ class ValveCategoryController extends Controller
         if (!empty($valve_category)) {
             $model = $valve_category;
             $model['json_field'] = $model->getTranslations('title');
+            // dd($model);
             $langs = Lang::all();
             return view('admin.valve_categories.edit', compact('model', 'langs'));
         } else {

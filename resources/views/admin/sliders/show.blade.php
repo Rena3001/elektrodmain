@@ -1,7 +1,7 @@
 @extends('admin.layout.master')
 
 @section('content')
-<div class="card card-primary">
+<div class="card card-primary mb-3">
     <div class="card-header">
         <h3 class="card-title">Details</h3>
     </div>

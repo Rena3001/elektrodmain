@@ -5,9 +5,17 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Admin\LangRequest;
 use App\Models\Lang;
+use App\Services\DataService;
 
 class LangController extends Controller
 {
+    protected $dataService;
+
+    public function __construct(DataService $dataService)
+    {
+        $this->dataService = $dataService;
+    }
+
     public function index()
     {
         $models = Lang::all();
@@ -28,7 +36,7 @@ class LangController extends Controller
         if ($created) {
             if ($request->file()) {
                 $fileExtension = $request->image->extension();
-                $imgName = 'langs_' . $created->code . '_' . time() . sprintf("%03s", rand(0, 999)) . '.' . $fileExtension;
+                $imgName = 'langs_' . $created->code . '_' . $this->dataService->getNowDateStr() . '.' . $fileExtension;
                 $imgPath = $request->file('image')->storeAs('uploads/admin/langs', $imgName, 'public');
                 $created->image = '/storage/' . $imgPath;
                 $created->save();
@@ -78,7 +86,7 @@ class LangController extends Controller
                         unlink(public_path($image));
                     }
                     $fileExtension = $request->image->extension();
-                    $imgName = 'langs_' . $model->code . '_' . time() . sprintf("%03s", rand(0, 999)) . '.' . $fileExtension;
+                    $imgName = 'langs_' . $model->code . '_' . $this->dataService->getNowDateStr() . '.' . $fileExtension;
                     $imgPath = $request->file('image')->storeAs('uploads/admin/langs', $imgName, 'public');
                     $model->image = '/storage/' . $imgPath;
                     $model->save();

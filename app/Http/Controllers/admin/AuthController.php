@@ -18,7 +18,7 @@ class AuthController extends Controller
             if (Auth::attempt($data, $remember)) {
                 return redirect()->route('admin.dashboard');
             } else {
-                return back()->withErrors(['email' => 'Invalid credentials'])
+                return back()->withErrors(['email' => 'E-mail və ya şifrəniz yalnışdır'])
                     ->withInput($request->only('email', 'remember'));
             }
         }
