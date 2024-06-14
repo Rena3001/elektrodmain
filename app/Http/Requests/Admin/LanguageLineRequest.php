@@ -24,7 +24,7 @@ class LanguageLineRequest extends FormRequest
             'text' => ['required', 'array'],
             'text.*' => ['max:255', function ($attribute, $value, $fail) {
                 if (!trim($value)) {
-                    $fail(Str::headline(Str::replace('.', ' ', $attribute)) . ' ' . __('validation.required'));
+                    $fail('Xana boş buraxıla bilməz!');
                 }
             }],
         ];
@@ -33,9 +33,9 @@ class LanguageLineRequest extends FormRequest
     public function messages(): array
     {
         return [
-            'group.required' => 'Group ' . __('validation.required'),
-            'group.unique' => 'Group & Key ' . __('validation.unique'),
-            'key.required' => 'Key ' . __('validation.required'),
+            'group.required' => 'Qrup boş buraxıla bilməz!',
+            'group.unique' => 'Qrup və açar söz birlikde unikal olmalıdır!',
+            'key.required' => 'Açar söz boş buraxıla bilməz!',
         ];
     }
 }
