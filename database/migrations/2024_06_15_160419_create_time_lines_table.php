@@ -13,6 +13,9 @@ return new class extends Migration
     {
         Schema::create('time_lines', function (Blueprint $table) {
             $table->id();
+            $table->string('image');
+            $table->string('title');
+            $table->string('year');
             $table->timestamps();
         });
     }

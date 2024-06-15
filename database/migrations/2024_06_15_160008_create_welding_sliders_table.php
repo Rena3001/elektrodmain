@@ -13,6 +13,9 @@ return new class extends Migration
     {
         Schema::create('welding_sliders', function (Blueprint $table) {
             $table->id();
+            $table->string('image');
+            $table->string('title');
+            $table->string('subtitle')->nullable();
             $table->timestamps();
         });
     }

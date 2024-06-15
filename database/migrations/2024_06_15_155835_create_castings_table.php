@@ -13,6 +13,12 @@ return new class extends Migration
     {
         Schema::create('castings', function (Blueprint $table) {
             $table->id();
+            $table->string('title');
+            $table->string('slug');
+            $table->string('image');
+            $table->longText('desc');
+            $table->text('desc_short');
+            $table->string('iframe_url')->nullable();
             $table->timestamps();
         });
     }
