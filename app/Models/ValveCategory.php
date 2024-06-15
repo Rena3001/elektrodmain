@@ -15,5 +15,10 @@ class ValveCategory extends Model
         'slug',
     ];
 
-    protected $translatable = ['title','slug'];
+    protected $translatable = ['title', 'slug'];
+
+    public function products()
+    {
+        return $this->hasMany(Product::class, 'category_id');
+    }
 }

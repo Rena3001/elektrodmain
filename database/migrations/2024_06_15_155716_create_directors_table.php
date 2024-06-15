@@ -13,6 +13,10 @@ return new class extends Migration
     {
         Schema::create('directors', function (Blueprint $table) {
             $table->id();
+            $table->string('image');
+            $table->string('fullname');
+            $table->string('position');
+            $table->unsignedBigInteger('page_id');
             $table->timestamps();
         });
     }

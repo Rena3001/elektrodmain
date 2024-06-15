@@ -18,4 +18,10 @@ class WeldingCategory extends Model
     ];
 
     protected $translatable = ['title', 'slug'];
+
+
+    public function groups()
+    {
+        return $this->hasMany(WeldingGroup::class, 'category_id');
+    }
 }

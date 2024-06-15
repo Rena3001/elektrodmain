@@ -19,4 +19,25 @@ class WeldingGroup extends Model
     ];
 
     protected $translatable = ['title', 'slug'];
+
+
+    public function category()
+    {
+        return $this->belongsTo(ValveCategory::class, 'category_id');
+    }
+
+    public function parent()
+    {
+        return $this->belongsTo(WeldingGroup::class, 'parent_id');
+    }
+
+    public function products()
+    {
+        return $this->hasMany(Product::class, 'group_id');
+    }
+
+    public function groups()
+    {
+        return $this->hasMany(WeldingGroup::class, 'parent_id');
+    }
 }
