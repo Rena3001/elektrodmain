@@ -3,19 +3,18 @@
 @push('page_title')
 Yeni tərcümə
 @endpush
-
 @push('section_title')
 Tərcümə Əlavə Etmə
 @endpush
 
 @section('content')
-<form action="{{ route('admin.language_line.store') }}" method="POST" class="row mb-3">
+<form action="{{ route('admin.language_line.store') }}" method="POST" class="row">
     @csrf
     <div class="col-lg-7">
         <div class="card card-primary card-outline card-outline-tabs">
             <div class="card-header border-bottom-0">
                 <ul class="nav nav-underline fs-9" id="myTab" role="tablist">
-                    @foreach (session('langs', $langs) as $key => $lang)
+                    @foreach ($langs as $key => $lang)
                     <li class="nav-item" role="presentation">
                         <a class="nav-link {{ $key === 0 ? 'active' : '' }} @error('text.' . $lang->code) text-danger @enderror"
                             id="{{ $lang->code . 'language_line' }}" data-bs-toggle="tab"
@@ -28,7 +27,7 @@ Tərcümə Əlavə Etmə
             </div>
             <div class="card-body">
                 <div class="tab-content mt-3" id="myTabContent">
-                    @foreach (session('langs', $langs) as $key => $lang)
+                    @foreach ($langs as $key => $lang)
                     <div class="tab-pane fade {{ $key === 0 ? 'active show' : '' }}"
                         id="{{ 'language_line' . $lang->code }}" role="tabpanel"
                         aria-labelledby="{{ $lang->code . 'language_line' }}">
@@ -72,7 +71,7 @@ Tərcümə Əlavə Etmə
             </div>
             <div class="card-footer text-right">
                 <button type="submit" class="btn btn-success">Əlavə et</button>
-                <a href="{{ route('admin.language_line.index') }}" class="btn btn-warning">Ləğv et</a>
+                <a href="{{route('admin.language_line.index')}}" class="btn btn-warning">Ləğv et</a>
             </div>
         </div>
     </div>

@@ -15,7 +15,7 @@ Slayd Siyahısı
     </div>
     <div class="card-body">
         <div class="p-4 code-to-copy">
-            <div id="tableExample3" data-list='{"valueNames":["name","email","age"],"page":5,"pagination":true}'>
+            <div id="tableExample3" data-list='{"valueNames":["id"],"page":5,"pagination":true}'>
                 <div class="search-box mb-3 mx-auto">
                     <form class="position-relative">
                         <input class="form-control search-input search form-control-sm" type="search"
@@ -27,7 +27,7 @@ Slayd Siyahısı
                     <table class="table table-striped table-sm fs-9 mb-0">
                         <thead>
                             <tr>
-                                <th class="sort border-top border-translucent ps-3" data-sort="name">Id</th>
+                                <th class="sort border-top border-translucent ps-3" data-sort="id">Id</th>
                                 <th class="sort border-top w-auto">Şəkil</th>
                                 <th class="sort text-end align-middle pe-0 border-top" scope="col">Fəaliyyətlər</th>
                             </tr>
@@ -35,7 +35,7 @@ Slayd Siyahısı
                         <tbody class="list">
                             @foreach ($sliders as $slider)
                             <tr>
-                                <td class="align-middle ps-3">{{ $slider->id }}</td>
+                                <td class="align-middle ps-3 id">{{ $slider->id }}</td>
                                 <td class="align-middle" style="width: 170px">
                                     @if ($slider->image)
                                     <div class="image">

@@ -37,9 +37,9 @@ Dil Siyahısı
                         <tbody class="list">
                             @foreach ($models as $model)
                             <tr>
-                                <td class="align-middle ps-3">{{ $model->id }}</td>
-                                <td class="align-middle">{{ $model->code }}</td>
-                                <td class="align-middle">{{ $model->language }}</td>
+                                <td class="align-middle ps-3 id">{{ $model->id }}</td>
+                                <td class="align-middle code">{{ $model->code }}</td>
+                                <td class="align-middle language">{{ $model->language }}</td>
                                 <td class="align-middle" style="width: 70px">
                                     @if ($model->image)
                                     <div class="image">

@@ -6,9 +6,6 @@ use Illuminate\Support\Str;
 
 class DataService
 {
-    // public function __construct(private ImageService $imageServicem, private SimpleService $simple, private ImageService $imageService)
-    // {
-    // }
 
     public function sluggable($str)
     {
@@ -35,50 +32,13 @@ class DataService
         return $categories;
     }
 
-    public function getNowDateStr(){
-            list($microseconds, $seconds) = explode(' ', microtime());
-            $milliseconds = sprintf('%03d', $microseconds * 1000);
-            $datetime = date('Y_m_d_H_i_s', $seconds);
+    public function getNowDateStr()
+    {
+        list($microseconds, $seconds) = explode(' ', microtime());
+        $milliseconds = sprintf('%03d', $microseconds * 1000);
+        $datetime = date('YmdHis', $seconds);
 
-            $post_data = $datetime. '_'. $milliseconds;
-            return $post_data;
+        $post_data = $datetime . $milliseconds;
+        return $post_data;
     }
-
-    // public function getObjectProps($o, $fields, $parent = '') {
-    //     if (strlen($parent)) {
-    //         $parent .= '->';
-    //     }
-    //     foreach ($fields as $k => $v) {
-    //         if (is_array($v)) {
-    //             $this->getObjectProps($o->{$k}, $v, $parent . $k);
-    //         } else {
-    //             echo $parent . $v . ' - ' . $o->{$v} . '<br/>';
-    //         }
-    //     }
-    // }
-
-    // protected $fields = [];
-    // public function getObjectProps($o)
-    // {
-    //     foreach ($o as $k => $v) {
-    //         $this->fields[] = $k;
-    //         if (is_array($v)) {
-    //             $this->fields[] = $this->getObjectProps($o->{$k});
-    //         }
-    //     }
-    //     return  $this->fields;
-    // }
-
-    // public function getFields($arr)
-    // {
-    //     $attr = $this->getObjectProps($arr);
-    //     $fields = array_slice($attr, 1, count($attr) - 9);
-    //     return $fields;
-    // }
-
-    // public function getFields($attr)
-    // {
-    //     $fields = array_slice($attr, 1, count($attr) - 9);
-    //     return $fields;
-    // }
 }

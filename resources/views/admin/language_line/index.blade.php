@@ -15,11 +15,11 @@ Statik Tərcümələrin siyahısı
     </div>
     <div class="card-body">
         <div class="p-4 code-to-copy">
-            <div id="tableExample3" data-list='{"valueNames":["name","email","age"],"page":5,"pagination":true}'>
+            <div id="tableExample3" data-list='{"valueNames":["id","group","key", "text"],"page":5,"pagination":true}'>
                 <div class="search-box mb-3 mx-auto">
                     <form class="position-relative">
                         <input class="form-control search-input search form-control-sm" type="search"
-                            placeholder="Search" aria-label="Search">
+                            placeholder="Axtarış" aria-label="Search">
                         <span class="fas fa-search search-box-icon"></span>
                     </form>
                 </div>
@@ -27,29 +27,31 @@ Statik Tərcümələrin siyahısı
                     <table class="table table-striped table-sm fs-9 mb-0">
                         <thead>
                             <tr>
-                                <th class="sort border-top border-translucent ps-3" data-sort="name">Id</th>
-                                <th class="sort border-top" data-sort="email">Qrup</th>
-                                <th class="sort border-top" data-sort="age">Açar soz</th>
-                                <th class="sort border-top w-auto">Mətn</th>
+                                <th class="sort border-top border-translucent ps-3" data-sort="id">Id</th>
+                                <th class="sort border-top" data-sort="group">Qrup</th>
+                                <th class="sort border-top" data-sort="key">Açar soz</th>
+                                <th class="sort border-top w-auto" data-sort="text">Mətn</th>
                                 <th class="sort text-end align-middle pe-0 border-top" scope="col">Fəaliyyətlər</th>
                             </tr>
                         </thead>
                         <tbody class="list">
                             @foreach ($models as $model)
                             <tr>
-                                <td class="align-middle ps-3">{{ $model->id }}</td>
-                                <td class="align-middle">{{ $model->group }}</td>
-                                <td class="align-middle">{{ $model->key }}</td>
-                                <td class="align-middle">
+                                <td class="align-middle ps-3 id">{{ $model->id }}</td>
+                                <td class="align-middle group">{{ $model->group }}</td>
+                                <td class="align-middle key">{{ $model->key }}</td>
+                                <td class="align-middle text">
                                     @php
                                     $texts = $model->text;
                                     @endphp
                                     @if (is_array($texts))
                                     @foreach ($texts as $lang => $text)
-                                    <p><strong>{{ strtoupper($lang) }}:</strong> {{ $text }}</p>
+                                    <p class="m-0 my-2"><strong>{{ strtoupper($lang) }}:</strong>
+                                        {{ Str::limit($text,50) }}
+                                    </p>
                                     @endforeach
                                     @else
-                                    <p>{{ $model->text }}</p>
+                                    <p class="m-0 my-2">{{ $model->text }}</p>
                                     @endif
                                 </td>
                                 <td class="align-middle white-space-nowrap text-end pe-0">

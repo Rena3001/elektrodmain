@@ -1,45 +1,49 @@
 @extends('admin.layout.master')
 
+@push('page_title')
+Statik Tərcümənin Məlumatları
+@endpush
+@push('section_title')
+Statik Tərcümənin Ətraflı Məlumatları
+@endpush
+
 @section('content')
-<div class="card card-primary mb-3">
+<div class="card card-primary  mb-3">
     <div class="card-header">
-        <h3 class="card-title">Details</h3>
+        <h3 class="card-title d-flex justify-content-between align-items-center">Ətraflı <a
+                href="{{route('admin.language_line.index')}}" class="btn btn-warning">Geri qayıt</a></h3>
+
     </div>
     <div class="card-body">
-        <div class="row">
-            @foreach ($model->getFillable() as $field)
-            @if (is_array($model->getAttribute($field)))
-            <div class="col-12">
-                <div class="card">
+        <div class="row" style="gap: 20px;">
+            <div class="col-lg-4 col-md-6">
+                <div class="card text-white bg-primary">
                     <div class="card-body">
-                        <div class="row">
-                            @foreach ($model->getAttribute($field) as $key=>$value)
-                            <div class="col-sm-4">
-                                <div class="position-relative p-3 bg-gray" style="height: 180px">
-                                    <div class="ribbon-wrapper ribbon-xl">
-                                        <div class="ribbon bg-warning text-lg">
-                                            {{$key}}
-                                        </div>
-                                    </div>
-                                    {{$value}}
-                                </div>
-                            </div>
-                            @endforeach
-                        </div>
+                        <h4 class="card-title text-white">Qrup</h4>
+                        <p class="card-text">{{$model->group}}</p>
                     </div>
                 </div>
             </div>
-            @else
-            <div class="col-sm-6">
-                <div class="callout callout-info">
-                    <h5 class="text-info">{{ ucfirst(str_replace('_', ' ', $field)) }}</h5>
-                    <p>
-                        {{$model->getAttribute($field)}}
-                    </p>
+            <div class="col-lg-4 col-md-6">
+                <div class="card text-white bg-info">
+                    <div class="card-body">
+                        <h4 class="card-title text-white">Açar söz</h4>
+                        <p class="card-text">{{$model->key}}</p>
+                    </div>
                 </div>
             </div>
-            @endif
-            @endforeach
+
+            <div class="col-md-12">
+                <div class="card border border-success w-fit">
+                    <div class="card-body">
+                        <h4 class="card-title text-warning">Mətn</h4>
+                        @foreach ($model->text as $lang=>$value)
+                        <p class="card-text"><strong class="me-3 text-info">{{strtoupper($lang)}}</strong>{{$value}}
+                        </p>
+                        @endforeach
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>

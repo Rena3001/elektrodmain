@@ -3,9 +3,9 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\Admin\SliderRequest;
 use App\Models\Slider;
 use App\Services\DataService;
-use Illuminate\Http\Request;
 
 class SliderController extends Controller
 {
@@ -27,10 +27,7 @@ class SliderController extends Controller
         return view('admin.sliders.create');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(Request $request)
+    public function store(SliderRequest $request)
     {
         if ($request->file()) {
             $fileExtension = $request->image->extension();
@@ -40,13 +37,20 @@ class SliderController extends Controller
             $created = Slider::create([
                 'image' => '/storage/' . $imgPath,
             ]);
+            if ($created) {
+                return redirect()->route('admin.sliders.index')
+                    ->with('type', 'success')
+                    ->with('message', 'Slayd uğurla əlavə edildi');
+            } else {
+                return back()->with('type', 'danger')
+                    ->with('message', 'Slaydı əlavə etmək mümkün olmadı');
+            }
+        } else {
+            return back()->with('type', 'info')
+                ->with('message', 'Şəkil seçilməyib');
         }
-        return redirect()->route('admin.sliders.index');
     }
 
-    /**
-     * Display the specified resource.
-     */
     public function show(Slider $slider)
     {
         if (!empty($slider)) {
@@ -57,9 +61,6 @@ class SliderController extends Controller
         }
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
     public function edit(Slider $slider)
     {
         if (!empty($slider)) {
@@ -70,10 +71,7 @@ class SliderController extends Controller
         }
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, Slider $slider)
+    public function update(SliderRequest $request, Slider $slider)
     {
         if (!empty($slider)) {
             $model = $slider;
@@ -90,13 +88,15 @@ class SliderController extends Controller
             }
 
             $model->save();
+            return redirect()->route('admin.sliders.index')
+                ->with('type', 'success')
+                ->with('message', 'Slayd uğurla yeniləndi');
+        } else {
+            return back()->with('type', 'danger')
+                ->with('message', 'Slaydı yeniləmək mümkün olmadı');
         }
-        return redirect()->route('admin.sliders.index');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     */
     public function destroy(Slider $slider)
     {
         if (!empty($slider)) {
@@ -107,12 +107,12 @@ class SliderController extends Controller
 
             if ($deleted) {
                 return redirect()->route('admin.sliders.index')
-                    ->with('type', 'info')
-                    ->with('message', 'Slider has been deleted!');
+                    ->with('type', 'success')
+                    ->with('message', 'Slayd uğurla silindi!');
             } else {
                 return redirect()->back()
                     ->with('type', 'danger')
-                    ->with('message', 'Failed to delete slider!');
+                    ->with('message', 'Slaydı silmək mümükün olmadı!');
             }
         } else {
             abort(404);

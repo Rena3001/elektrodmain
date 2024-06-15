@@ -15,7 +15,7 @@ Route::get('/', function () {
 });
 
 // Admin
-Route::group(['middleware' => 'auth', 'prefix' => '/control', 'as' => 'admin.'], function () {
+Route::group(['middleware' => 'auth', 'prefix' => LaravelLocalization::setLocale() . '/control', 'as' => 'admin.'], function () {
     Route::get('/', [AdminController::class, 'index'])->name('dashboard');
     Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
 
