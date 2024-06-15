@@ -14,8 +14,7 @@
                 </div>
             </a>
         </div>
-        <div class="search-box navbar-top-search-box d-none d-lg-block" data-list='{"valueNames":["title"]}'
-            style="width:25rem;">
+        <div class="search-box navbar-top-search-box d-none d-lg-block" style="width:25rem;">
             <form class="position-relative" data-bs-toggle="search" data-bs-display="static"><input
                     class="form-control search-input fuzzy-search rounded-pill form-control-sm" type="search"
                     placeholder="Axtarış..." aria-label="Search">
@@ -24,7 +23,7 @@
             <div class="btn-close position-absolute end-0 top-50 translate-middle cursor-pointer shadow-none"
                 data-bs-dismiss="search"><button class="btn btn-link p-0" aria-label="Close"></button>
             </div>
-            <div class="dropdown-menu border start-0 py-0 overflow-hidden w-100">
+            <!-- <div class="dropdown-menu border start-0 py-0 overflow-hidden w-100">
                 <div class="scrollbar-overlay" style="max-height: 30rem;">
                     <div class="list pb-3">
                         <h6 class="dropdown-header text-body-highlight fs-10 py-2">24 <span
@@ -173,10 +172,36 @@
                         <p class="fallback fw-bold fs-7 d-none">No Result Found.</p>
                     </div>
                 </div>
-            </div>
+            </div> -->
         </div>
         <ul class="navbar-nav navbar-nav-icons flex-row">
+            <li class="nav-item dropdown language-switch " data-bs-auto-close="outside">
+                <a class="nav-link lh-1 pe-0" id="navbarDropdownUser" href="#!" role="button" data-bs-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false">
+                    @if ($currentLang?->image)
+                    <img src="{{ $currentLang?->image }}" class="img-flag mr-2"
+                        alt="{{ $currentLang->code . '-' . $currentLang->country }}">
+                    @endif
+                    {{ Str::upper($currentLang->code) }}
+                </a>
+                <div class="dropdown-menu dropdown-menu-end navbar-dropdown-caret py-0 shadow border lang "
+                    aria-labelledby="navbarDropdownUser" data-bs-popper="static">
+                    @foreach ($langs as $lang)
+                    @if ($currentLang->code !== $lang->code)
+                    <a rel="alternate" hreflang="{{ $lang->code }}"
+                        href="{{ LaravelLocalization::getLocalizedURL($lang->code, null, [], true) }}"
+                        class="dropdown-item english" aria-expanded="true">
+                        @if ($lang->image)
+                        <img src="{{ $lang->image }}" class="img-flag mr-2"
+                            alt="{{ $lang->code . '-' . $lang->country }}">
+                        @endif
+                        {{ Str::upper($lang->code) }}
 
+                    </a>
+                    @endif
+                    @endforeach
+                </div>
+            </li>
             <li class="nav-item">
                 <div class="theme-control-toggle fa-icon-wait px-2"><input
                         class="form-check-input ms-0 theme-control-toggle-input" type="checkbox"

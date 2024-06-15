@@ -44,11 +44,12 @@ class LangController extends Controller
 
             return redirect()->route('admin.langs.index')
                 ->with('type', 'success')
-                ->with('message', 'Language has been stored.');
+                ->with('message', 'Dil uğurla əlavə edildi.');
         } else {
             return back()
                 ->with('type', 'danger')
-                ->with('message', 'Failed to store language!');
+                ->with('message', 'Dil əlavə etmək mümkün olmadı')
+                ->withInput($data);
         }
     }
 
@@ -93,12 +94,12 @@ class LangController extends Controller
                 }
                 return redirect()->route('admin.langs.index')
                     ->with('type', 'success')
-                    ->with('message', 'Language has been updated.');
+                    ->with('message', 'Dil uğurla yeniləndi.');
             } else {
                 return back()
                     ->with('type', 'danger')
-                    ->with('message', 'Failed to update language!')
-                    ->withInput($data)->with(compact('model'));
+                    ->with('message', 'Dilin yenilənməsi mümkün olmadı!')
+                    ->withInput($data);
             }
         } else {
             abort(404);
@@ -117,12 +118,12 @@ class LangController extends Controller
 
             if ($deleted) {
                 return redirect()->route('admin.langs.index')
-                    ->with('type', 'info')
-                    ->with('message', 'Language has been deleted!');
+                    ->with('type', 'success')
+                    ->with('message', 'Dil uğurla silindi!');
             } else {
                 return redirect()->back()
                     ->with('type', 'danger')
-                    ->with('message', 'Failed to delete language!');
+                    ->with('message', 'Dilin silinməsi mümkün olmadı!');
             }
         } else {
             abort(404);

@@ -29,19 +29,16 @@ class LanguageLineController extends Controller
     public function store(LanguageLineRequest $request)
     {
         $data = $request->only('group', 'key', 'text');
-
         $cerated = LanguageLine::create($data);
 
         if ($cerated) {
             return redirect()->route('admin.language_line.index')
-                ->with('success', 'Language Line added successfully.');
+                ->with('success', 'Statik tərcümə uğurla əlavə olundu.');
         } else {
-
-            $langs = Lang::all();
             return back()
                 ->with('type', 'danger')
-                ->with('message', 'Failed to store language!')
-                ->withInput($data)->with(['langs' => $langs]);
+                ->with('message', 'Statik tərcüməni əlavə etmək mümkün olmadı!')
+                ->withInput($data);
         }
     }
 
@@ -69,8 +66,6 @@ class LanguageLineController extends Controller
     public function update(LanguageLineRequest $request, LanguageLine $languageLine)
     {
         if (!empty($languageLine)) {
-            $model = $languageLine;
-            $langs = Lang::all();
 
             $data = $request->only('text', 'group', 'key');
             $update = $languageLine->update($data);
@@ -78,12 +73,12 @@ class LanguageLineController extends Controller
             if ($update) {
                 return redirect()->route('admin.language_line.index')
                     ->with('type', 'success')
-                    ->with('message', 'Language Line has been updated.');
+                    ->with('message', 'Statik tərcümə uğurla yeniləndi.');
             } else {
                 return back()
                     ->with('type', 'danger')
-                    ->with('message', 'Failed to update language line!')
-                    ->withInput($data)->with(compact('model', 'langs'));
+                    ->with('message', 'Statik tərcüməni yeniləmək mümkün olmadı!')
+                    ->withInput($data);
             }
         } else {
             abort(404);
@@ -97,12 +92,12 @@ class LanguageLineController extends Controller
 
             if ($deleted) {
                 return redirect()->route('admin.language_line.index')
-                    ->with('type', 'info')
-                    ->with('message', 'Language line has been deleted!');
+                    ->with('type', 'success')
+                    ->with('message', 'Statik tərcümə uğurla silindi.');
             } else {
                 return redirect()->back()
                     ->with('type', 'danger')
-                    ->with('message', 'Failed to delete language line!');
+                    ->with('message', 'Statik tərcüməni silmək mümkün olmadı!');
             }
         } else {
             abort(404);
