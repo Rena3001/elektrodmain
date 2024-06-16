@@ -3,9 +3,8 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Model;
 
-class ValveSlider extends Model
+class ValveSlider extends BaseModel
 {
     use HasFactory;
 

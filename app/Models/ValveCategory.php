@@ -3,10 +3,9 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Model;
 use Spatie\Translatable\HasTranslations;
 
-class ValveCategory extends Model
+class ValveCategory extends BaseModel
 {
     use HasFactory, HasTranslations;
 

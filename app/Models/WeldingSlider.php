@@ -3,10 +3,9 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Model;
 use Spatie\Translatable\HasTranslations;
 
-class WeldingSlider extends Model
+class WeldingSlider extends BaseModel
 {
     use HasFactory, HasTranslations;
 

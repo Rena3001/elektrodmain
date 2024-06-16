@@ -3,9 +3,8 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Model;
 
-class Lang extends Model
+class Lang extends BaseModel
 {
     use HasFactory;
     protected $fillable = ['country', 'code', 'image'];
