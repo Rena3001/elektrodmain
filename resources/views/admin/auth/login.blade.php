@@ -11,8 +11,9 @@ EAP - Daxil olma
     <div class="row flex-center min-vh-100 py-5">
         <div class="col-sm-10 col-md-8 col-lg-5 col-xl-5 col-xxl-3"><a
                 class="d-flex flex-center text-decoration-none mb-4" href="../../../index-1.html">
-                <div class="d-flex align-items-center fw-bolder fs-3 d-inline-block"><img
-                        src="{{asset('admin/assets/img/elektrod_admin_logo_2.svg')}}" alt="phoenix" width="150"></div>
+                <div class="d-flex align-items-center fw-bolder fs-3 d-inline-block"><img class="logo_img"
+                        src="{{asset('admin/assets/img/elektrod_admin_logo_light.svg')}}" alt="phoenix" width="150">
+                </div>
             </a>
             <div class="text-center mb-7">
                 <h3 class="text-body-highlight">Giriş</h3>
