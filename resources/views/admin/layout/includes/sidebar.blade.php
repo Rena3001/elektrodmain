@@ -83,5 +83,13 @@
                             </ul>
                         </div>
                     </div>
+                    <div class="nav-item-wrapper"><a
+                            class="nav-link label-1 @if (Route::is('admin.settings*')) active @endif"
+                            href="{{ route('admin.settings') }}" role="button" data-bs-toggle="" aria-expanded="false">
+                            <div class="d-flex align-items-center"><span class="nav-link-icon"><span
+                                        data-feather="settings"></span></span><span class="nav-link-text-wrapper"><span
+                                        class="nav-link-text">Saytın Ümumi Parametrləri</span></span></div>
+                        </a>
+                    </div>
                 </li>
 </nav>

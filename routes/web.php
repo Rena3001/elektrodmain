@@ -13,6 +13,7 @@ use App\Http\Controllers\Admin\LangController;
 use App\Http\Controllers\Admin\LanguageLineController;
 use App\Http\Controllers\Admin\PageController;
 use App\Http\Controllers\Admin\ProductController;
+use App\Http\Controllers\Admin\SettingController;
 use App\Http\Controllers\Admin\SliderController;
 use App\Http\Controllers\Admin\TimeLineController;
 use App\Http\Controllers\Admin\ValveCategoryController;
@@ -50,6 +51,11 @@ Route::group(['middleware' => 'auth', 'prefix' => LaravelLocalization::setLocale
     Route::resource('welding_categories', WeldingCategoryController::class);
     Route::resource('welding_groups', WeldingGroupController::class);
     Route::resource('welding_sliders', WeldingSliderController::class);
+
+    // Others
+    Route::get('/settings', [SettingController::class, 'index'])->name('settings');
+    Route::get('/settings/edit', [SettingController::class, 'edit'])->name('settings.edit');
+    Route::patch('/settings/update', [SettingController::class, 'update'])->name('settings.update');
 });
 
 // Admin Login

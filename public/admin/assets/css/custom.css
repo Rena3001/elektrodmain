@@ -36,3 +36,9 @@
 #tableExample3 .dropdown-menu {
     min-width: fit-content;
 }
+
+.settings_fields {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
