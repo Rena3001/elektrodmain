@@ -5,10 +5,11 @@
                 data-bs-toggle="collapse" data-bs-target="#navbarVerticalCollapse"
                 aria-controls="navbarVerticalCollapse" aria-expanded="false" aria-label="Toggle Navigation"><span
                     class="navbar-toggle-icon"><span class="toggle-line"></span></span></button>
-            <a class="navbar-brand me-1 me-sm-3" href="index-1.html">
+            <a class="navbar-brand me-1 me-sm-3" href="{{route('admin.dashboard')}}">
                 <div class="d-flex align-items-center">
-                    <div class="d-flex align-items-center"><img
-                            src="{{ asset('admin/assets/img/elektrod_admin_logo_2.svg') }}" alt="phoenix" width="65">
+                    <div class="d-flex align-items-center"><img class="logo_img"
+                            src="{{ asset('admin/assets/img/elektrod_admin_logo_light.svg') }}" alt="phoenix"
+                            width="65">
                         <p class="logo-text ms-2 d-none d-sm-block">Elektrod Admin Panel</p>
                     </div>
                 </div>

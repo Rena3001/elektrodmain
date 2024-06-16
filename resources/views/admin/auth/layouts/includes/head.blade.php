@@ -36,10 +36,8 @@ if (phoenixIsRTL) {
     linkDefault.setAttribute('disabled', true);
     userLinkDefault.setAttribute('disabled', true);
     document.querySelector('html').setAttribute('dir', 'rtl');
-} else {
-    var linkRTL = document.getElementById('style-rtl');
-    var userLinkRTL = document.getElementById('user-style-rtl');
-    linkRTL.setAttribute('disabled', true);
-    userLinkRTL.setAttribute('disabled', true);
 }
 </script>
+
+
+<link href="{{ asset('admin/assets/css/custom.css') }}" type="text/css" rel="stylesheet" id="user-style-default">

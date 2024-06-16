@@ -31,7 +31,6 @@
     rel="stylesheet">
 <link href="{{ asset('admin/assets/css/theme.min.css') }}" type="text/css" rel="stylesheet" id="style-default">
 <link href="{{ asset('admin/assets/css/user.min.css') }}" type="text/css" rel="stylesheet" id="user-style-default">
-<link href="{{ asset('admin/assets/css/custom.css') }}" type="text/css" rel="stylesheet" id="user-style-default">
 <script>
 document.addEventListener('DOMContentLoaded', function() {
     var phoenixIsRTL = window.config.config.phoenixIsRTL;
@@ -59,3 +58,5 @@ document.addEventListener('DOMContentLoaded', function() {
 {{-- <link href="{{asset('admin/assets/vendors/leaflet/leaflet.css')}}" rel="stylesheet">
 <link href="{{asset('admin/assets/vendors/leaflet.markercluster/MarkerCluster.css')}}" rel="stylesheet">
 <link href="{{asset('admin/assets/vendors/leaflet.markercluster/MarkerCluster.Default.css')}}" rel="stylesheet"> --}}
+
+<link href="{{ asset('admin/assets/css/custom.css') }}" type="text/css" rel="stylesheet" id="user-style-default">

@@ -8,3 +8,5 @@
 <script src="{{asset('admin/assets/vendors/feather-icons/feather.min.js')}}"></script>
 <script src="{{asset('admin/assets/vendors/dayjs/dayjs.min.js')}}"></script>
 <script src="{{asset('admin/assets/js/phoenix.js')}}"></script>
+
+<script src="{{asset('admin/assets/js/custom.js')}}"></script>
