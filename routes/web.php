@@ -25,7 +25,7 @@ use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 
 // Front
 Route::get('/', function () {
-    return "Home Page";
+    return "Home Page Front";
 });
 
 // Admin
