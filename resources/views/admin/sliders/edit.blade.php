@@ -2,19 +2,19 @@
 
 @push('js')
 <script>
-window.addEventListener('load', function() {
-    const imgSrc = document.querySelector('.image-box img').getAttribute("src");
-    document.querySelector('.custom-file-input').addEventListener('change', function(event) {
+    window.addEventListener('load', function() {
+        const imgSrc = document.querySelector('.image-box img').getAttribute("src");
+        document.querySelector('.custom-file-image').addEventListener('change', function(event) {
 
-        if (event.target.files[0]) {
-            var tmppath = URL.createObjectURL(event.target.files[0]);
-            document.querySelector('.image-box img').setAttribute("src",
-                URL.createObjectURL(event.target.files[0]));
-        } else {
-            document.querySelector('.image-box img').setAttribute("src", imgSrc);
-        }
-    })
-});
+            if (event.target.files[0]) {
+                var tmppath = URL.createObjectURL(event.target.files[0]);
+                document.querySelector('.image-box img').setAttribute("src",
+                    URL.createObjectURL(event.target.files[0]));
+            } else {
+                document.querySelector('.image-box img').setAttribute("src", imgSrc);
+            }
+        })
+    });
 </script>
 @endpush
 
@@ -26,8 +26,7 @@ Slayd Redaktə Etmə
 @endpush
 
 @section('content')
-<form action="{{ route('admin.sliders.update', $model->id) }}" method="POST" class="row mb-3"
-    enctype="multipart/form-data">
+<form action="{{ route('admin.sliders.update', $model->id) }}" method="POST" class="row mb-3" enctype="multipart/form-data">
     @csrf
     @method('PATCH')
     <div class="col-lg-8">
@@ -36,9 +35,7 @@ Slayd Redaktə Etmə
 
                 <div class="form-group d-flex">
                     <label for="image">Şəkil</label>
-                    <input type="file" name="image"
-                        class="custom-file-input form-control @error('image') is-invalid @enderror" id="image"
-                        value="{{ old('image') }}">
+                    <input type="file" name="image" class="custom-file-image form-control @error('image') is-invalid @enderror" id="image" value="{{ old('image') }}">
                     @error('image')
                     <span class="error invalid-feedback">{{ $message }}</span>
                     @enderror

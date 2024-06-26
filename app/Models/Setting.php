@@ -32,9 +32,13 @@ class Setting extends BaseModel
         'about_iframe',
         'contact_title',
         'contact_image',
+        'casting_desc',
         'welding_title',
         'welding_image',
-        'casting_desc',
+        'casting_title',
+        'casting_image',
+        'valve_title',
+        'valve_image',
     ];
 
     protected $translatable = [
@@ -46,7 +50,9 @@ class Setting extends BaseModel
         'about_title',
         'about_desc',
         'contact_title',
-        'welding_title',
         'casting_desc',
+        'welding_title',
+        'casting_title',
+        'valve_title',
     ];
 }

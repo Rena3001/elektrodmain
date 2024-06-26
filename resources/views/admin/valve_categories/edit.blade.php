@@ -55,6 +55,6 @@ Valve Kateqoriya Redaktə Etmə
                 <!-- /.card -->
             </div>
         </div>
-
+    </div>
 </form>
 @endsection
