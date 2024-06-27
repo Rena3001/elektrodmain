@@ -61,9 +61,13 @@ class DatabaseSeeder extends Seeder
                 'about_iframe' => '#',
                 'contact_title' => 'Contact Title',
                 'contact_image' => '#',
+                'casting_desc' => 'Casting Description',
                 'welding_title' => 'Welding Title',
                 'welding_image' => '#',
-                'casting_desc' => 'Casting Description',
+                'casting_title' => 'Casting Title',
+                'casting_image' => '#',
+                'valve_title' => 'Valve Title',
+                'valve_image' => '#',
             ]);
         }
     }

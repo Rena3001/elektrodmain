@@ -2,7 +2,7 @@
 @push('js')
 <script>
 window.addEventListener('load', function() {
-    document.querySelector('.custom-file-input').addEventListener('change', function(event) {
+    document.querySelector('.custom-file-image').addEventListener('change', function(event) {
         if (event.target.files[0]) {
             var tmppath = URL.createObjectURL(event.target.files[0]);
             document.querySelector('.image-box img').setAttribute("src",
@@ -47,7 +47,7 @@ Dil Əlavə Etmə
                 <div class="form-group d-flex">
                     <label for="image">Şəkil</label>
                     <input type="file" name="image"
-                        class="custom-file-input form-control @error('image') is-invalid @enderror" id="image"
+                        class="custom-file-image form-control @error('image') is-invalid @enderror" id="image"
                         value="image">
                     @error('image')
                     <span class="error invalid-feedback">{{ $message }}</span>
