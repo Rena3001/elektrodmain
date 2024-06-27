@@ -47,17 +47,17 @@
                                             </span>
                                             <span class="nav-link-text ps-2">Statik tərcümələr</span>
                                         </div>
-                                    </a><!-- more inner pages-->
+                                    </a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link dropdown-indicator label-1 @if (Route::is('admin.langs*')) active @endif"
                                         href="{{ route('admin.langs.index') }}">
                                         <div class="d-flex align-items-center">
-                                            <span class="nav-link-icon me-0"><span data-feather="globe"></span>
+                                            <span class="nav-link-icon me-0"><span data-feather="flag"></span>
                                             </span>
                                             <span class="nav-link-text ps-2">Dillər</span>
                                         </div>
-                                    </a><!-- more inner pages-->
+                                    </a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link dropdown-indicator label-1 @if (Route::is('admin.valve_categories*')) active @endif"
@@ -67,7 +67,7 @@
                                             </span>
                                             <span class="nav-link-text ps-2">Valve Kategoriyalar</span>
                                         </div>
-                                    </a><!-- more inner pages-->
+                                    </a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link dropdown-indicator label-1 @if (Route::is('admin.sliders*')) active @endif"
@@ -77,9 +77,9 @@
                                             </span>
                                             <span class="nav-link-text ps-2">Slaydlar</span>
                                         </div>
-                                    </a><!-- more inner pages-->
+                                    </a>
                                 </li>
-                                <li class="nav-item">
+                                <!-- <li class="nav-item">
                                     <a class="nav-link dropdown-indicator label-1 @if (Route::is('admin.blogs*')) active @endif"
                                         href="{{ route('admin.blogs.index') }}">
                                         <div class="d-flex align-items-center">
@@ -87,127 +87,127 @@
                                             </span>
                                             <span class="nav-link-text ps-2">Bloqlar</span>
                                         </div>
-                                    </a><!-- more inner pages-->
-                                </li>
+                                    </a>
+                                </li> -->
                                 <li class="nav-item">
                                     <a class="nav-link dropdown-indicator label-1 @if (Route::is('admin.branchs*')) active @endif"
                                         href="{{ route('admin.branchs.index') }}">
                                         <div class="d-flex align-items-center">
-                                            <span class="nav-link-icon me-0"><span data-feather="branchs"></span>
+                                            <span class="nav-link-icon me-0"><span data-feather="git-branch"></span>
                                             </span>
                                             <span class="nav-link-text ps-2">Filliallar</span>
                                         </div>
-                                    </a><!-- more inner pages-->
+                                    </a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link dropdown-indicator label-1 @if (Route::is('admin.brands*')) active @endif"
                                         href="{{ route('admin.brands.index') }}">
                                         <div class="d-flex align-items-center">
-                                            <span class="nav-link-icon me-0"><span data-feather="brands"></span>
+                                            <span class="nav-link-icon me-0"><span data-feather="bold"></span>
                                             </span>
                                             <span class="nav-link-text ps-2">Brendlər</span>
                                         </div>
-                                    </a><!-- more inner pages-->
+                                    </a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link dropdown-indicator label-1 @if (Route::is('admin.castings*')) active @endif"
                                         href="{{ route('admin.castings.index') }}">
                                         <div class="d-flex align-items-center">
-                                            <span class="nav-link-icon me-0"><span data-feather="castings"></span>
+                                            <span class="nav-link-icon me-0"><span data-feather="key"></span>
                                             </span>
                                             <span class="nav-link-text ps-2">Castings</span>
                                         </div>
-                                    </a><!-- more inner pages-->
+                                    </a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link dropdown-indicator label-1 @if (Route::is('admin.contact_cards*')) active @endif"
                                         href="{{ route('admin.contact_cards.index') }}">
                                         <div class="d-flex align-items-center">
-                                            <span class="nav-link-icon me-0"><span data-feather="contact_cards"></span>
+                                            <span class="nav-link-icon me-0"><span data-feather="square"></span>
                                             </span>
                                             <span class="nav-link-text ps-2">Əlaqə kartları</span>
                                         </div>
-                                    </a><!-- more inner pages-->
+                                    </a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link dropdown-indicator label-1 @if (Route::is('admin.directors*')) active @endif"
                                         href="{{ route('admin.directors.index') }}">
                                         <div class="d-flex align-items-center">
-                                            <span class="nav-link-icon me-0"><span data-feather="directors"></span>
+                                            <span class="nav-link-icon me-0"><span data-feather="users"></span>
                                             </span>
                                             <span class="nav-link-text ps-2">Direktor</span>
                                         </div>
-                                    </a><!-- more inner pages-->
+                                    </a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link dropdown-indicator label-1 @if (Route::is('admin.pages*')) active @endif"
                                         href="{{ route('admin.pages.index') }}">
                                         <div class="d-flex align-items-center">
-                                            <span class="nav-link-icon me-0"><span data-feather="pages"></span>
+                                            <span class="nav-link-icon me-0"><span data-feather="layout"></span>
                                             </span>
                                             <span class="nav-link-text ps-2">Səhifələr</span>
                                         </div>
-                                    </a><!-- more inner pages-->
+                                    </a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link dropdown-indicator label-1 @if (Route::is('admin.products*')) active @endif"
                                         href="{{ route('admin.products.index') }}">
                                         <div class="d-flex align-items-center">
-                                            <span class="nav-link-icon me-0"><span data-feather="products"></span>
+                                            <span class="nav-link-icon me-0"><span data-feather="target"></span>
                                             </span>
                                             <span class="nav-link-text ps-2">Məhsullar</span>
                                         </div>
-                                    </a><!-- more inner pages-->
+                                    </a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link dropdown-indicator label-1 @if (Route::is('admin.time_lines*')) active @endif"
                                         href="{{ route('admin.time_lines.index') }}">
                                         <div class="d-flex align-items-center">
-                                            <span class="nav-link-icon me-0"><span data-feather="time_lines"></span>
+                                            <span class="nav-link-icon me-0"><span data-feather="loader"></span>
                                             </span>
                                             <span class="nav-link-text ps-2">Zaman axını</span>
                                         </div>
-                                    </a><!-- more inner pages-->
+                                    </a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link dropdown-indicator label-1 @if (Route::is('admin.valve_sliders*')) active @endif"
                                         href="{{ route('admin.valve_sliders.index') }}">
                                         <div class="d-flex align-items-center">
-                                            <span class="nav-link-icon me-0"><span data-feather="valve_sliders"></span>
+                                            <span class="nav-link-icon me-0"><span data-feather="sliders"></span>
                                             </span>
                                             <span class="nav-link-text ps-2">Valve Slayderlər</span>
                                         </div>
-                                    </a><!-- more inner pages-->
+                                    </a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link dropdown-indicator label-1 @if (Route::is('admin.welding_categories*')) active @endif"
                                         href="{{ route('admin.welding_categories.index') }}">
                                         <div class="d-flex align-items-center">
-                                            <span class="nav-link-icon me-0"><span data-feather="welding_categories"></span>
+                                            <span class="nav-link-icon me-0"><span data-feather="folder"></span>
                                             </span>
                                             <span class="nav-link-text ps-2">Welding Kateqorilər</span>
                                         </div>
-                                    </a><!-- more inner pages-->
+                                    </a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link dropdown-indicator label-1 @if (Route::is('admin.welding_groups*')) active @endif"
                                         href="{{ route('admin.welding_groups.index') }}">
                                         <div class="d-flex align-items-center">
-                                            <span class="nav-link-icon me-0"><span data-feather="welding_groups"></span>
+                                            <span class="nav-link-icon me-0"><span data-feather="hexagon"></span>
                                             </span>
                                             <span class="nav-link-text ps-2">Welding Qrupları</span>
                                         </div>
-                                    </a><!-- more inner pages-->
+                                    </a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link dropdown-indicator label-1 @if (Route::is('admin.welding_sliders*')) active @endif"
                                         href="{{ route('admin.welding_sliders.index') }}">
                                         <div class="d-flex align-items-center">
-                                            <span class="nav-link-icon me-0"><span data-feather="welding_sliders"></span>
+                                            <span class="nav-link-icon me-0"><span data-feather="sliders"></span>
                                             </span>
                                             <span class="nav-link-text ps-2">Welding Slayderlər</span>
                                         </div>
-                                    </a><!-- more inner pages-->
+                                    </a>
                                 </li>
 
 
