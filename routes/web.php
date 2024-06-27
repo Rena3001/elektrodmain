@@ -8,6 +8,7 @@ use App\Http\Controllers\Admin\BranchController;
 use App\Http\Controllers\Admin\BrandController;
 use App\Http\Controllers\Admin\CastingController;
 use App\Http\Controllers\Admin\ContactCardController;
+use App\Http\Controllers\Admin\ContactController;
 use App\Http\Controllers\Admin\DirectorController;
 use App\Http\Controllers\Admin\LangController;
 use App\Http\Controllers\Admin\LanguageLineController;
@@ -52,10 +53,13 @@ Route::group(['middleware' => 'auth', 'prefix' => LaravelLocalization::setLocale
     Route::resource('welding_groups', WeldingGroupController::class);
     Route::resource('welding_sliders', WeldingSliderController::class);
 
+
     // Others
+    Route::get('contacts', [ContactController::class, 'index'])->name('contacts.index');
     Route::get('/settings', [SettingController::class, 'index'])->name('settings');
     Route::get('/settings/edit', [SettingController::class, 'edit'])->name('settings.edit');
     Route::patch('/settings/update', [SettingController::class, 'update'])->name('settings.update');
+
 });
 
 // Admin Login
