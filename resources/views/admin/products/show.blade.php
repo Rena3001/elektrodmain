@@ -26,10 +26,14 @@
                 </div>
                 <div class="card border border-success w-fit">
                     <div class="card-body">
-                        <h4 class="card-title text-warning">Title</h4>
-                        @foreach ($product->category->title as $lang => $value)
-                        <p class="card-text"><strong class="me-3 text-info">{{ strtoupper($lang) }}</strong>{{ $value }}</p>
-                        @endforeach
+                        <h4 class="card-title text-warning">Category</h4>
+                        @if ($category)
+                            @foreach ($category->getTranslations('title') as $lang => $value)
+                            <p class="card-text"><strong class="me-3 text-info">{{ strtoupper($lang) }}</strong>{{ $value }}</p>
+                            @endforeach
+                        @else
+                        <p class="card-text text-muted">Category mövcud deyil</p>
+                        @endif
                     </div>
                 </div>
             </div>
@@ -48,7 +52,7 @@
                     <div class="card-body">
                         <h4 class="card-title text-warning">Şəkil</h4>
                         @if ($product->image)
-                        <img src="{{ asset($product->image) }}" alt="Product Image" class="img-fluid">
+                        <img src="{{ asset('storage/' . $product->image) }}" alt="Product Image" class="img-fluid">
                         @else
                         <p class="card-text text-muted">Şəkil mövcud deyil</p>
                         @endif

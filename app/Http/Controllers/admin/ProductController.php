@@ -63,15 +63,15 @@ if ($request->hasFile('image')) {
     public function show(Product $product)
     {
         if (!empty($product)) {
-            $model = $product;
-            $model['slugs'] = $model->getTranslations('slug');
-            $model['titles'] = $model->getTranslations('title');
-            $category = ValveCategory::where('id', $model->category_id)->first();
-            return view('admin.products.show', compact('product','category'));
+            $product['slugs'] = $product->getTranslations('slug');
+            $product['titles'] = $product->getTranslations('title');
+            $category = ValveCategory::where('id', $product->category_id)->first();
+            return view('admin.products.show', compact('product', 'category'));
         } else {
             abort(404);
         }
     }
+
 
     public function edit(Product $product)
     {
