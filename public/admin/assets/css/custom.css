@@ -42,3 +42,10 @@
     gap: 20px;
     flex-wrap: wrap;
 }
+
+.note-float-left {
+    margin-right: 10px;
+}
+.note-float-right {
+    margin-left: 10px;
+}
